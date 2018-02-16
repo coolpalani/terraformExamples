@@ -11,7 +11,7 @@ resource "aws_launch_configuration" "example" {
 	security_groups = ["${aws_security_group.instance.id}"]
 	user_data = <<-EOF
 			#!/bin/bash
-			echo "Hello World" > index.html
+			echo "Welcome to my personal webpage, hello world" > index.html
 			nohup busybox httpd -f -p "${var.server_port}" &
 			EOF
 	lifecycle { 
